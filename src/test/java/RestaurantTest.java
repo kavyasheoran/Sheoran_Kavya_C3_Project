@@ -8,6 +8,9 @@ import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalTime;
+import java.util.Arrays;
+import java.util.Collections;
+
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -69,4 +72,12 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void get_value_of_all_ordered_items() {
+        assertEquals(388, restaurant.getOrderValue(Arrays.asList("Sweet corn soup", "Vegetable lasagne")));
+    }
+    @Test
+    public void total_order_value_should_be_zero_if_no_item_is_selected() {
+        assertEquals(0, restaurant.getOrderValue(Collections.emptyList()));
+    }
 }

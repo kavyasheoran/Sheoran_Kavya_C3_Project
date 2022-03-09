@@ -62,4 +62,9 @@ public class Restaurant {
         return name;
     }
 
+    public int getOrderValue(List<String> itemList){
+        int totalOrderCost = -1;
+        return totalOrderCost;
+    }
+
 }
